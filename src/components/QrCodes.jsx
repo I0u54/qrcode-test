@@ -44,7 +44,7 @@ export default function QrCodes() {
         <div>
             <div id="reader"></div>
             {result &&
-                (data.filter((f)=>f==result).length > 0 ?<Alert status='sucsess'>
+                (data.filter((f)=>f==result).length > 0 ?<Alert status='success'>
                 <AlertIcon />
                 <AlertTitle>Good</AlertTitle>
                 <AlertDescription>Your Qr Code is valid.</AlertDescription>
