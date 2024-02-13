@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
+import axios from "axios";
+import {
+    Alert,
+    AlertIcon,
+    AlertTitle,
+    AlertDescription,
+  } from '@chakra-ui/react'
 
 export default function QrCodes() {
     const [result, setResult] = useState("");
-    const [data, setData] = useState([1707796173901,5874367]);
+    const [data, setData] = useState([]);
+   
 
     useEffect(() => {
+       
         localStorage.clear();
         const scanner = new Html5QrcodeScanner(
             "reader",
@@ -13,7 +22,7 @@ export default function QrCodes() {
                 fps: 5,
                 qrbox: { width: 250, height: 250 },
             },
-            /* verbose= */ false
+            false
         );
 
         scanner.render(onScanSuccess, onScanError);
@@ -35,7 +44,15 @@ export default function QrCodes() {
         <div>
             <div id="reader"></div>
             {result &&
-                (data.filter((f)=>f==result).length > 0 ? <p>Success</p> : <p>Naaah</p>)}
+                (data.filter((f)=>f==result).length > 0 ?<Alert status='sucsess'>
+                <AlertIcon />
+                <AlertTitle>Good</AlertTitle>
+                <AlertDescription>Your Qr Code is valid.</AlertDescription>
+              </Alert> :<Alert status='error'>
+                <AlertIcon />
+                <AlertTitle>Invalid</AlertTitle>
+                <AlertDescription>Your Qr Code is invalid.</AlertDescription>
+              </Alert>)}
           
 
         </div>
