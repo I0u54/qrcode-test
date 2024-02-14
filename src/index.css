@@ -2,8 +2,14 @@
   margin: auto;
 }
 
-#reader__dashboard_section_csr #html5-qrcode-button-camera-permission , #html5-qrcode-button-camera-stop,#html5-qrcode-button-camera-start{
+#reader__dashboard_section_csr #html5-qrcode-button-camera-permission  {
   padding: 10px 10px;
+  margin: 5px 0px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+#html5-qrcode-button-camera-stop,#html5-qrcode-button-camera-start{
+  padding: 2px 10px;
   margin: 5px 0px;
   border: 1px solid lightgray;
   border-radius: 5px;
