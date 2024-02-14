@@ -41,8 +41,8 @@ export default function QrCodes() {
     }, []);
 
     return (
-        <div>
-            <div id="reader"></div>
+        <div style={{width:"80%",margin:"auto",marginTop:"20px"}}>
+            <div id="reader" style={{borderRadius:"10px"}}></div>
             {result &&
                 (data.filter((f)=>f==result).length > 0 ?<Alert status='success'>
                 <AlertIcon />
