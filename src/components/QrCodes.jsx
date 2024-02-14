@@ -10,7 +10,7 @@ import {
 
 export default function QrCodes() {
     const [result, setResult] = useState("");
-    const [data, setData] = useState([1707865158240]);
+    const [data, setData] = useState([1707865158240,1707879217746]);
    
 
     useEffect(() => {
